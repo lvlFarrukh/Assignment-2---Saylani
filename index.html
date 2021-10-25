@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+       body{
+        margin: auto;
+        text-align: center;
+        font-family: 'Mukta';
+    }
+        }
+  </style>
+  <body>
+    <h3>Please give input for first matrx</h3>
+    <input type="number" id="m111" />
+    <input type="number" id="m112" />
+    <input type="number" id="m113" />
+    <input type="number" id="m121" />
+    <input type="number" id="m122" />
+    <input type="number" id="m123" />
+    <input type="number" id="m131" />
+    <input type="number" id="m132" />
+    <input type="number" id="m133" />
+    <br />
+    <button onclick="addmatrixone()">make matrix one</button>
+    <h3>Please give input for second matrx</h3>
+    <input type="number" id="m211" />
+    <input type="number" id="m212" />
+    <input type="number" id="m213" />
+    <input type="number" id="m221" />
+    <input type="number" id="m222" />
+    <input type="number" id="m223" />
+    <input type="number" id="m231" />
+    <input type="number" id="m232" />
+    <input type="number" id="m233" />
+    <br />
+    <button onclick="addmatrixtwo()">make matrix Two</button>
+    <br />
+    <br />
+    <br />
+    <button onclick="addTwoMatrix()">add two matrix</button>
+    <p id="set"></p>
+    <script>
+      let matrixone = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+      ];
+      let matrixtwo = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+      ];
+      let sum = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+      ];
+
+      function addmatrixone() {
+        matrixone[0][0] = Number(document.getElementById("m111").value);
+        matrixone[0][1] = Number(document.getElementById("m112").value);
+        matrixone[0][2] = Number(document.getElementById("m113").value);
+        matrixone[1][0] = Number(document.getElementById("m121").value);
+        matrixone[1][1] = Number(document.getElementById("m122").value);
+        matrixone[1][2] = Number(document.getElementById("m123").value);
+        matrixone[2][0] = Number(document.getElementById("m131").value);
+        matrixone[2][1] = Number(document.getElementById("m132").value);
+        matrixone[2][2] = Number(document.getElementById("m133").value);
+      }
+      function addmatrixtwo() {
+        matrixtwo[0][0] = Number(document.getElementById("m211").value);
+        matrixtwo[0][1] = Number(document.getElementById("m212").value);
+        matrixtwo[0][2] = Number(document.getElementById("m213").value);
+        matrixtwo[1][0] = Number(document.getElementById("m221").value);
+        matrixtwo[1][1] = Number(document.getElementById("m222").value);
+        matrixtwo[1][2] = Number(document.getElementById("m223").value);
+        matrixtwo[2][0] = Number(document.getElementById("m231").value);
+        matrixtwo[2][1] = Number(document.getElementById("m232").value);
+        matrixtwo[2][2] = Number(document.getElementById("m233").value);
+      }
+      function addTwoMatrix() {
+        matrixone.map((item, index) => {
+          item.map((item2, index2) => {
+            document.getElementById("set").innerHTML +=
+              item2 + matrixtwo[index][index2] + " ";
+          });
+          document.getElementById("set").innerHTML += "</br>";
+        });
+      }
+    </script>
+  </body>
+</html>
